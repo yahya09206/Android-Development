@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="212dp"
+        android:layout_height="213dp"
+        app:srcCompat="@drawable/ball_640x480"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="149dp" />
 </android.support.constraint.ConstraintLayout>
