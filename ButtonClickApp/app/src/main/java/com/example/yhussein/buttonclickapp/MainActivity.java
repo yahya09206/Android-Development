@@ -37,5 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 textView.append(result);
             }
         };
+        //telling button to use our onclicklistener method
+        button.setOnClickListener(ourOnClickListener);
     }
 }
