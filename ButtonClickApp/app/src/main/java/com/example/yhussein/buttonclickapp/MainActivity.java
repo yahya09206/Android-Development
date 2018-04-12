@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //associate fields with the layout. findviewbyid returns the view object based on which id provided.
-        userInput = (EditText) findViewById(R.id.editText);
-        button = (Button) findViewById(R.id.button);
-        textView = (TextView) findViewById((R.id.textView));
+        userInput = findViewById(R.id.editText);
+        button = findViewById(R.id.button);
+        textView = findViewById((R.id.textView));
     }
 }
