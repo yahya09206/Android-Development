@@ -57,13 +57,15 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onStart: out");
     }
 
-    @Overridewe
+    @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         Log.d(TAG, "onRestoreInstanceState: in");
         super.onRestoreInstanceState(savedInstanceState);
         //RETRIEVE VALUE STORE IN BUNDLE CONTENT
-        String savedString = savedInstanceState.getString(TEXT_CONTENTS);
-        textView.setText(savedString);
+//        String savedString = savedInstanceState.getString(TEXT_CONTENTS);
+//        textView.setText(savedString);
+        //shortcut
+        textView.setText(savedInstanceState.getString(TEXT_CONTENTS));
         Log.d(TAG, "onRestoreInstanceState: out");
     }
 
