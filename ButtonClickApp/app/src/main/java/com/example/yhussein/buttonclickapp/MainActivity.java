@@ -85,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPostResume() {
-        Log.d(TAG, "onPostResume: in");
-        super.onPostResume();
-        Log.d(TAG, "onPostResume: out");
+    protected void onResume() {
+        Log.d(TAG, "onResume: in");
+        super.onResume();
+        Log.d(TAG, "onResume: out");
     }
 
     @Override
