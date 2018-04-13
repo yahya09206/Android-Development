@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText userInput;
     private Button button;
     private TextView textView;
-    private int numTimesClicked = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +32,8 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener ourOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //how many times button is clicked and increase it by 1
-                numTimesClicked = numTimesClicked + 1;
-                //add text to our textview widget
-                String result = "\nThe button got tapped " + numTimesClicked + " time";
-                //add 's' to end of the word 'time' if button is clicked more than once
-                if (numTimesClicked != 1){
-                    result += "s";
-                }
-                //append results to textview
+                String result = userInput.getText().toString();
+                result += "/n";
                 textView.append(result);
             }
         };
