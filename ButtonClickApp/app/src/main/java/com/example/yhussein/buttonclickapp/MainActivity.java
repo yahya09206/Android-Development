@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText userInput;
     private TextView textView;
     private static final String TAG = "MainActivity";
+    private final String TEXT_CONTENT = "Text Content"
 
     @Override
     //Bundle saves the state of the instance
@@ -80,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         Log.d(TAG, "onSaveInstanceState: in");
+        //save current value of textview inside of bundle
+        outState.putString(TEXT_CONTENT, textView.getText().toString());
         super.onSaveInstanceState(outState);
         Log.d(TAG, "onSaveInstanceState: out");
     }
