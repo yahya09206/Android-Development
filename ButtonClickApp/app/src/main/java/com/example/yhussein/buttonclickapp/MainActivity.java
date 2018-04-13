@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         userInput = findViewById(R.id.editText);
         button = findViewById(R.id.button);
         textView = findViewById((R.id.textView));
+        //clear text from design
+        textView.setText("");
         //New object of type onclicklistener
         View.OnClickListener ourOnClickListener = new View.OnClickListener() {
             @Override
