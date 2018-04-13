@@ -3,6 +3,7 @@ package com.example.yhussein.buttonclickapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,10 +14,13 @@ public class MainActivity extends AppCompatActivity {
     //type of objects to be dealing with
     private EditText userInput;
     private TextView textView;
-    private EditText editText;
+    private static final String TAG = "MainActivity";
 
     @Override
+    //Bundle saves the state of the instance
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate: in");
+
         super.onCreate(savedInstanceState);
         //sets which layout to use
         setContentView(R.layout.activity_main);
@@ -25,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         userInput = findViewById(R.id.editText);
         Button button = findViewById(R.id.button);
         textView = findViewById((R.id.textView));
-        editText.setText("");
+        userInput.setText("");
         //clear text from design
         textView.setText("");
         textView.setMovementMethod(new ScrollingMovementMethod());
@@ -36,9 +40,27 @@ public class MainActivity extends AppCompatActivity {
                 String result = userInput.getText().toString();
                 result += "\n";
                 textView.append(result);
+                userInput.setText("");
             }
         };
         //telling button to use our onclicklistener method
         button.setOnClickListener(ourOnClickListener);
+        Log.d(TAG, "onCreate: out");
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
     }
 }
