@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         userInput = findViewById(R.id.editText);
         Button button = findViewById(R.id.button);
         textView = findViewById((R.id.textView));
-        editText = findViewById(R.id.editText);
         editText.setText("");
         //clear text from design
         textView.setText("");
