@@ -34,7 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 //how many times button is clicked and increase it by 1
                 numTimesClicked = numTimesClicked + 1;
                 //add text to our textview widget
-                String result = "\nThe button got tapped " + numTimesClicked + " times";
+                String result = "\nThe button got tapped " + numTimesClicked + " time1";
+                //add 's' to end of the word 'time' if button is clicked more than once
+                if (numTimesClicked != 1){
+                    result += "s";
+                }
                 //append results to textview
                 textView.append(result);
             }
