@@ -2,6 +2,7 @@ package com.example.yhussein.buttonclickapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById((R.id.textView));
         //clear text from design
         textView.setText("");
+        textView.setMovementMethod(new ScrollingMovementMethod());
         //New object of type onclicklistener
         View.OnClickListener ourOnClickListener = new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 //how many times button is clicked and increase it by 1
                 numTimesClicked = numTimesClicked + 1;
                 //add text to our textview widget
