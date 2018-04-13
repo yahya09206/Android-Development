@@ -12,7 +12,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     //type of objects to be dealing with
     private EditText userInput;
-    private Button button;
     private TextView textView;
 
     @Override
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         //associate fields with the layout. findviewbyid returns the view object based on which id provided.
         userInput = findViewById(R.id.editText);
-        button = findViewById(R.id.button);
+        Button button = findViewById(R.id.button);
         textView = findViewById((R.id.textView));
         //clear text from design
         textView.setText("");
