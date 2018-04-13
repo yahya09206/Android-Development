@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String result = userInput.getText().toString();
-                result += "/n";
+                result += "\n";
                 textView.append(result);
             }
         };
