@@ -24,7 +24,7 @@ public class ColorWheel {
 
 
     // Methods - Actions the object can take
-   public int getColor(){
+    int getColor(){
         // Randomly select a fact
         Random randomGenerator = new Random();
         // Generate random number that updates with new length of facts array
