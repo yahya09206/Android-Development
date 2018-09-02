@@ -25,7 +25,7 @@ public class FactBook {
         Random randomGenerator = new Random();
         // Generate random number that updates with new length of facts array
         int randomNumber = randomGenerator.nextInt(facts.length);
-        String fact = facts[randomNumber];
+        return facts[randomNumber];
     }
 }
 
