@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 // The button was clicked so update the fact TextView with a new fact
                 // Randomly select a fact
                 Random randomGenerator = new Random();
-                // Generate random number
-                int randomNumber = randomGenerator.nextInt(10);
-                String fact = randomNumber + "";
+                // Generate random number that updates with new length of facts array
+                int randomNumber = randomGenerator.nextInt(facts.length);
+                String fact = facts[randomNumber];
 
                 // Update screen with new fact
                 // Change layout
