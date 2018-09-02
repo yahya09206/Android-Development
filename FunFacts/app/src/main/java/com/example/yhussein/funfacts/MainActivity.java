@@ -1,5 +1,6 @@
 package com.example.yhussein.funfacts;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         // Assign the Views from the layout file to the corresponding variables
         factTextView = findViewById(R.id.factTextView);
         showFactButton = findViewById(R.id.showFactButton);
-        relativeLayout = findViewById(R.id.)
+        relativeLayout = findViewById(R.id.relativeLayout);
 
         // Make button do something set up onclick method
         View.OnClickListener listener = new View.OnClickListener() {
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             // Code to run when button is clicked
             public void onClick(View v) {
                 String fact = factBook.getFact();
+                relativeLayout.setBackgroundColor(Color.RED);
 
                 // Update screen with new fact - Change layout
                 factTextView.setText(fact);
