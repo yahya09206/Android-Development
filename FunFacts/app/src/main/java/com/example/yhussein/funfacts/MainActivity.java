@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
                         "On average, it takes 66 days to form a new habit.",
                         "Mammoths still walked the earth when the Great Pyramid was being built." };
 
-
                 // The button was clicked so update the fact TextView with a new fact
                 // Randomly select a fact
                 Random randomGenerator = new Random();
@@ -53,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 // Update screen with new fact
                 // Change layout
                 factTextView.setText(fact);
-
             }
         };
         showFactButton.setOnClickListener(listener);
