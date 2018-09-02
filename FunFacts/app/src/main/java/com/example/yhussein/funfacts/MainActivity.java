@@ -22,10 +22,15 @@ public class MainActivity extends AppCompatActivity {
         factTextView = findViewById(R.id.factTextView);
         showFactButton = findViewById(R.id.showFactButton);
 
-        // Make button do something
+        // Make button do something set up onclick method
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
+            // Code to run when button is clicked
             public void onClick(View v) {
+                // The button was clicked so update the fact TextView with a new fact
+                String fact = "Ostriches can run faster than horses";
+                // Change layout
+                factTextView.setText(fact);
 
             }
         };
