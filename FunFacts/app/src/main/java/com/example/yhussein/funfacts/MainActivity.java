@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.example.yhussein.funfacts.R;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     // Declare our View variables
     private TextView factTextView;
@@ -28,7 +30,13 @@ public class MainActivity extends AppCompatActivity {
             // Code to run when button is clicked
             public void onClick(View v) {
                 // The button was clicked so update the fact TextView with a new fact
-                String fact = "Ostriches can run faster than horses";
+                // Randomly select a fact
+                Random randomGenerator = new Random();
+                // Generate random number
+                int randomNumber = randomGenerator.nextInt(3);
+                String fact = randomNumber + "";
+
+                // Update screen with new fact
                 // Change layout
                 factTextView.setText(fact);
 
