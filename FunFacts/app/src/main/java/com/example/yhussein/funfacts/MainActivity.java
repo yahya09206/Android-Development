@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.yhussein.funfacts.R;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     // Declare our View variables
     private TextView factTextView;
     private Button showFactButton;
+    private RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         // Assign the Views from the layout file to the corresponding variables
         factTextView = findViewById(R.id.factTextView);
         showFactButton = findViewById(R.id.showFactButton);
+        relativeLayout = findViewById(R.id.)
 
         // Make button do something set up onclick method
         View.OnClickListener listener = new View.OnClickListener() {
