@@ -11,6 +11,8 @@ import com.example.yhussein.funfacts.R;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    // Make variable only available inside this class
+    private FactBook factBook = new FactBook();
     // Declare our View variables
     private TextView factTextView;
     private Button showFactButton;
@@ -29,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             // Code to run when button is clicked
             public void onClick(View v) {
+                String fact = factBook.getFact();
 
-                // Update screen with new fact
-                // Change layout
+                // Update screen with new fact - Change layout
                 factTextView.setText(fact);
             }
         };
