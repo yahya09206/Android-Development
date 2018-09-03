@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.yhussein.funfacts.R;
 
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         showFactButton.setOnClickListener(listener);
+        Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_SHORT).show();
     }
 }
 
@@ -57,3 +59,4 @@ public class MainActivity extends AppCompatActivity {
 // A field is inside the class but outside of other methods
 // Assign views after setcontentview
 // R stands for resources
+// Toast is a message that pops up a for little bit informing the user that their input is required
