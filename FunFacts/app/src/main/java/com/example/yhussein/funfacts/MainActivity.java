@@ -3,6 +3,7 @@ package com.example.yhussein.funfacts;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -14,6 +15,8 @@ import com.example.yhussein.funfacts.R;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    // Common practice
+    public static final String TAG = MainActivity.class.getSimpleName();
     // Make variable only available inside this class
     private FactBook factBook = new FactBook();
     private ColorWheel colorWheel = new ColorWheel();
@@ -50,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         showFactButton.setOnClickListener(listener);
-        Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_SHORT).show();
+
+        //LOG MESSAGE
+        Log.d(TAG, "We're logging from the onCreate() method!");
     }
 }
 
