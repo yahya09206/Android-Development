@@ -16,6 +16,10 @@ public class StoryAcitivity extends AppCompatActivity {
         // GET INTENT
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
+        // Set null pointer exception
+        if(name == null || name.isEmpty()){
+            name = "FRIEND";
+        }
         // Log Statement
         Log.d(TAG, name);
     }
