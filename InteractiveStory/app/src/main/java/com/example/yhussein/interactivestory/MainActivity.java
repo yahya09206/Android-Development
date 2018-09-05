@@ -1,5 +1,6 @@
 package com.example.yhussein.interactivestory;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,8 +28,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name = nameField.getText().toString();
-                Toast.makeText(MainActivity.this, name, Toast.LENGTH_SHORT).show();
+                //Start story method
+                startStory();
             }
         });
     }
+
+    private void startStory() {
+        // Create new intent
+        Intent intent = new Intent(this, StoryAcitivity.class);
+        // Express intent
+        startActivity(intent);
+    }
 }
+
+//Intent are used to start a new task
