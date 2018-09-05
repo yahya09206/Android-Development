@@ -15,7 +15,7 @@ public class StoryAcitivity extends AppCompatActivity {
 
         // GET INTENT
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
+        String name = intent.getStringExtra(getString(R.string.key_name));
         // Set null pointer exception
         if(name == null || name.isEmpty()){
             name = "FRIEND";
