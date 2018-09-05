@@ -29,14 +29,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String name = nameField.getText().toString();
                 //Start story method
-                startStory();
+                startStory(name);
             }
         });
     }
 
-    private void startStory() {
+    private void startStory(String name) {
         // Create new intent
         Intent intent = new Intent(this, StoryAcitivity.class);
+        intent.putExtra("name", name);
         // Express intent
         startActivity(intent);
     }
