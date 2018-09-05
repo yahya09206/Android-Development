@@ -67,6 +67,18 @@ public class StoryAcitivity extends AppCompatActivity {
         pageText = String.format(pageText, name);
         storyTextView.setText(pageText);
 
+        if(page.isFinalPage()){
+            //Hide one button
+            choice1Button.setVisibility(View.INVISIBLE);
+            choice2Button.setText(R.string.play_again_button_text);
+
+        }else {
+            loadButtons(page);
+        }
+
+    }
+
+    private void loadButtons(final Page page) {
         choice1Button.setText(page.getChoice1().getTextId());
         // Onclick listener for choice1 button
         choice1Button.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +100,5 @@ public class StoryAcitivity extends AppCompatActivity {
 
             }
         });
-
     }
 }
