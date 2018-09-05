@@ -6,6 +6,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -54,7 +55,7 @@ public class StoryAcitivity extends AppCompatActivity {
     }
 
     private void loadPage(int pageNumber) {
-        Page page = story.getPage(pageNumber);
+        final Page page = story.getPage(pageNumber);
 
         // Set the sources for each view
         Drawable image = ContextCompat.getDrawable(this, page.getImageId());
@@ -67,7 +68,26 @@ public class StoryAcitivity extends AppCompatActivity {
         storyTextView.setText(pageText);
 
         choice1Button.setText(page.getChoice1().getTextId());
+        // Onclick listener for choice1 button
+        choice1Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int nextPage = page.getChoice1().getNextPage();
+                loadPage(nextPage);
+
+            }
+        });
+
+
         choice2Button.setText(page.getChoice2().getTextId());
+        choice2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int nextPage = page.getChoice2().getNextPage();
+                loadPage(nextPage);
+
+            }
+        });
 
     }
 }
