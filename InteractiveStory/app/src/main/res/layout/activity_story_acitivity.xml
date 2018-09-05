@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.StoryAcitivity">
 
+    <ImageView
+        android:id="@+id/storyImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/page0"
+        app:layout_constraintEnd_toLeftOf="parent"
+        app:layout_constraintStart_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
