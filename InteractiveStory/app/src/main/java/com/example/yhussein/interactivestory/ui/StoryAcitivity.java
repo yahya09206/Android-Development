@@ -71,6 +71,13 @@ public class StoryAcitivity extends AppCompatActivity {
             //Hide one button
             choice1Button.setVisibility(View.INVISIBLE);
             choice2Button.setText(R.string.play_again_button_text);
+            choice2Button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Will take back to main activity
+                    finish();
+                }
+            });
 
         }else {
             loadButtons(page);
