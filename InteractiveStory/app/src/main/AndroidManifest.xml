@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.StoryAcitivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.StoryAcitivity" android:screenOrientation="portrait"
+            android:parentActivityName=".ui.MainActivity"></activity>
     </application>
 
 </manifest>
