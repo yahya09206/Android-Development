@@ -50,6 +50,7 @@
             tools:layout_editor_absoluteY="40dp">
 
             <ImageView
+                android:contentDescription="@string/story_image_content_description"
                 android:id="@+id/storyImageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
