@@ -23,6 +23,7 @@ public class StoryAcitivity extends AppCompatActivity {
     private TextView storyTextView;
     private Button choice1Button;
     private Button choice2Button;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class StoryAcitivity extends AppCompatActivity {
 
         // GET INTENT
         Intent intent = getIntent();
-        String name = intent.getStringExtra(getString(R.string.key_name));
+        name = intent.getStringExtra(getString(R.string.key_name));
         // Set null pointer exception
         if(name == null || name.isEmpty()){
             name = "FRIEND";
@@ -58,6 +59,15 @@ public class StoryAcitivity extends AppCompatActivity {
         // Set the sources for each view
         Drawable image = ContextCompat.getDrawable(this, page.getImageId());
         storyImageView.setImageDrawable(image);
+
+        // String variable to hold text of our story
+        String pageText = getString(page.getTextId());
+        // Store reformatted text into new variable. Add name if placeholder included. Won't add if not
+        pageText = String.format(pageText, name);
+        storyTextView.setText(pageText);
+
+        choice1Button.setText(page.getChoice1().getTextId());
+        choice2Button.setText(page.getChoice2().getTextId());
 
     }
 }
