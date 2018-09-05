@@ -15,6 +15,8 @@ import com.example.yhussein.interactivestory.R;
 import com.example.yhussein.interactivestory.model.Page;
 import com.example.yhussein.interactivestory.model.Story;
 
+import java.util.Stack;
+
 public class StoryAcitivity extends AppCompatActivity {
     public static final String TAG = StoryAcitivity.class.getSimpleName();
 
@@ -25,6 +27,7 @@ public class StoryAcitivity extends AppCompatActivity {
     private Button choice1Button;
     private Button choice2Button;
     private String name;
+    private Stack<Integer> pageStack = new Stack<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,7 @@ public class StoryAcitivity extends AppCompatActivity {
     }
 
     private void loadPage(int pageNumber) {
+        pageStack.push(pageNumber);
         final Page page = story.getPage(pageNumber);
 
         // Set the sources for each view
@@ -109,5 +113,17 @@ public class StoryAcitivity extends AppCompatActivity {
 
             }
         });
+    }
+    //On back pressed
+
+    @Override
+    public void onBackPressed() {
+        pageStack.pop();
+        if(pageStack.isEmpty()){
+            super.onBackPressed();
+        }else{
+            loadPage(pageStack.pop());
+        }
+
     }
 }
