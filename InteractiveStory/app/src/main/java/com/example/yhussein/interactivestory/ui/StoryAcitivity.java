@@ -74,8 +74,9 @@ public class StoryAcitivity extends AppCompatActivity {
             choice2Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    loadPage(0);
                     // Will take back to main activity
-                    finish();
+//                    finish();
                 }
             });
 
@@ -86,6 +87,7 @@ public class StoryAcitivity extends AppCompatActivity {
     }
 
     private void loadButtons(final Page page) {
+        choice1Button.setVisibility(View.VISIBLE);
         choice1Button.setText(page.getChoice1().getTextId());
         // Onclick listener for choice1 button
         choice1Button.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +99,7 @@ public class StoryAcitivity extends AppCompatActivity {
             }
         });
 
-
+        choice2Button.setVisibility(View.VISIBLE);
         choice2Button.setText(page.getChoice2().getTextId());
         choice2Button.setOnClickListener(new View.OnClickListener() {
             @Override
