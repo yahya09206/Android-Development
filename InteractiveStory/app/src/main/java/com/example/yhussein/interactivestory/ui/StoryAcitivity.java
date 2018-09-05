@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.yhussein.interactivestory.R;
+import com.example.yhussein.interactivestory.model.Page;
 
 public class StoryAcitivity extends AppCompatActivity {
     public static final String TAG = StoryAcitivity.class.getSimpleName();
@@ -24,5 +25,7 @@ public class StoryAcitivity extends AppCompatActivity {
         }
         // Log Statement
         Log.d(TAG, name);
+
+
     }
 }
