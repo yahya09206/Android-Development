@@ -1,6 +1,8 @@
 package com.example.yhussein.interactivestory.ui;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -52,5 +54,10 @@ public class StoryAcitivity extends AppCompatActivity {
 
     private void loadPage(int pageNumber) {
         Page page = story.getPage(pageNumber);
+
+        // Set the sources for each view
+        Drawable image = ContextCompat.getDrawable(this, page.getImageId());
+        storyImageView.setImageDrawable(image);
+
     }
 }
