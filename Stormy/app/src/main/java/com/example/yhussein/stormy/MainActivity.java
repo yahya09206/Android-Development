@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             Response response = call.execute();
+            if (response.isSuccessful()){
+                Log.v(TAG, response.body().string());
+            }
         } catch (IOException e) {
             Log.e(TAG, "IO Exception caught: ", e);
         }
