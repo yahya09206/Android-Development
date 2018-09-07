@@ -29,38 +29,43 @@ public class MainActivity extends AppCompatActivity {
         String forecastURL = "https://api.darksky.net/forecast/"
                 + apiKey + "/" + latitude + "," + longitude;
 
-        // New HTTP Client object
-        OkHttpClient client = new OkHttpClient();
-        // Build Request
-        Request request = new Request.Builder()
-                .url(forecastURL)
-                .build();
-        // Put request inside of call object to get response
-        Call call = client.newCall(request);
+        if (isNetworkAvailable()) {
 
-        //Async method
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
+            // New HTTP Client object
+            OkHttpClient client = new OkHttpClient();
+            // Build Request
+            Request request = new Request.Builder()
+                    .url(forecastURL)
+                    .build();
+            // Put request inside of call object to get response
+            Call call = client.newCall(request);
 
-            }
+            //Async method
+            call.enqueue(new Callback() {
+                @Override
+                public void onFailure(Call call, IOException e) {
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    Log.v(TAG, response.body().string());
-                    if (response.isSuccessful()){
-                    }
-                    else{
-                        alertUserAboutError();
-                    }
-                } catch (IOException e) {
-                    Log.e(TAG, "IO Exception caught: ", e);
                 }
-            }
-        });
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+                    try {
+                        Log.v(TAG, response.body().string());
+                        if (response.isSuccessful()) {
+                        } else {
+                            alertUserAboutError();
+                        }
+                    } catch (IOException e) {
+                        Log.e(TAG, "IO Exception caught: ", e);
+                    }
+                }
+            });
+        }
 
         Log.d(TAG, "Main UI code is running, horray!");
+    }
+
+    private boolean isNetworkAvailable() {
     }
 
     private void alertUserAboutError() {
