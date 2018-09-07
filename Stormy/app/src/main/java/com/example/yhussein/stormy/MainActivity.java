@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -75,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
         boolean isAvailable = false;
         if (networkInfo != null && networkInfo.isConnected()){
             isAvailable = true;
+        }else {
+            Toast.makeText(this, R.string.network_unavailable_msg,
+                    Toast.LENGTH_LONG).show();
         }
         return isAvailable;
     }
