@@ -76,6 +76,17 @@ public class MainActivity extends AppCompatActivity {
                         Log.v(TAG, jsonData);
                         if (response.isSuccessful()) {
                             currentWeather = getCurrentDetails(jsonData);
+
+                            CurrentWeather displayWeather = new CurrentWeather(
+                                    currentWeather.getLocationLabel();
+                                    currentWeather.getIcon();
+                                    currentWeather.getTime();
+                                    currentWeather.getTemperature();
+                                    currentWeather.getHumidity();
+                                    currentWeather.getPercepChance();
+                                    currentWeather.getSummary();
+                                    currentWeather.getTimeZone();
+                            );
                         } else {
                             alertUserAboutError();
                         }
