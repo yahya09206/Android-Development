@@ -20,6 +20,9 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
+    //Current Weather object
+    private CurrentWeather currentWeather;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
                     try {
-                        Log.v(TAG, response.body().string());
+                        String jsonData = response.body().string();
+                        Log.v(TAG, jsonData);
                         if (response.isSuccessful()) {
+                            currentWeather = getCurrentDetails(jsonData);
                         } else {
                             alertUserAboutError();
                         }
@@ -68,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Log.d(TAG, "Main UI code is running, horray!");
+    }
+
+    private CurrentWeather getCurrentDetails(String jsonData) {
+        return null;
     }
 
     private boolean isNetworkAvailable() {
