@@ -48,7 +48,7 @@ public class CurrentWeather {
         formatter.setTimeZone(TimeZone.getTimeZone(timeZone));
         // Convert into milliseconds
         Date dateTime = new Date(time * 1000);
-        return formatter.format();
+        return formatter.format(dateTime);
     }
 
     public void setTime(long time) {
