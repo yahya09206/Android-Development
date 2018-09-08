@@ -33,4 +33,17 @@
         app:layout_constraintTop_toTopOf="@+id/temperaturValue"
         app:srcCompat="@drawable/degree" />
 
+    <TextView
+        android:id="@+id/timeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="At 5:00pm it will be "
+        android:textColor="@color/half_white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="163dp" />
+
 </android.support.constraint.ConstraintLayout>
