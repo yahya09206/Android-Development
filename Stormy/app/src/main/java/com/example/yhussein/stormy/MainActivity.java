@@ -3,6 +3,7 @@ package com.example.yhussein.stormy;
 import android.app.Activity;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkInfo;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     // Current Weather object
     private CurrentWeather currentWeather;
 
+    private ImageView iconImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         TextView darkSky = findViewById(R.id.attribution);
         // Enable link inside text view
         darkSky.setMovementMethod(LinkMovementMethod.getInstance());
+
+        iconImageView = findViewById(R.id.iconImageView);
 
         String apiKey = "e59741b20df0b6a1feb5d659d327094b";
 
@@ -90,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
 
                             // Set weather to display with binding variable
                             binding.setWeather(displayWeather);
+
+                            // Set image icon to match the weather
+                            Drawable drawable = getResources().getDrawable(displayWeather.getIconId());
+                            iconImageView.setImageDrawable(drawable);
 
                         } else {
                             alertUserAboutError();
