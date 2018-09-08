@@ -98,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
         currentWeather.setTemperature(currently.getDouble("temperature"));
         currentWeather.setTimeZone(timezone);
 
+        Log.d(TAG, currentWeather.getFormattedTime());
+
         // Return current weather object
         return currentWeather;
     }
