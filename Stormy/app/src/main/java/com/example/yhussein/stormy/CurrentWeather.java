@@ -43,6 +43,7 @@ public class CurrentWeather {
         return time;
     }
 
+    // Formatting time into readable language
     public String getFormattedTime(){
         SimpleDateFormat formatter = new SimpleDateFormat("h:mm:a");
         formatter.setTimeZone(TimeZone.getTimeZone(timeZone));
