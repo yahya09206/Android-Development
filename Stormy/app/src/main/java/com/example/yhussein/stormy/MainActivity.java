@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -67,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                     } catch (IOException e) {
                         Log.e(TAG, "IO Exception caught: ", e);
+                    } catch (JSONException e){
+                        Log.e(TAG, "JSON exception caught: ", e);
                     }
                 }
             });
@@ -75,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "Main UI code is running, horray!");
     }
 
-    private CurrentWeather getCurrentDetails(String jsonData) {
-        return null;
+    private CurrentWeather getCurrentDetails(String jsonData) throws JSONException{
+        JSONObject forecast = new JSONObject(jsonData);
     }
 
     private boolean isNetworkAvailable() {
