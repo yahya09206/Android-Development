@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
         // Write timezone to log
         String timezone = forecast.getString("timezone");
         Log.i(TAG, "From JSON " + timezone);
+
+        JSONObject currently = forecast.getJSONObject("currently");
         return null;
     }
 
