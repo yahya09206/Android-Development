@@ -6,7 +6,9 @@ import android.net.Network;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -30,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView darkSky = findViewById(R.id.attribution);
+        // Enable link inside text view
+        darkSky.setMovementMethod(LinkMovementMethod.getInstance());
 
         String apiKey = "e59741b20df0b6a1feb5d659d327094b";
 
