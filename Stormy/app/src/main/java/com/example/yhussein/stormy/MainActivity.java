@@ -39,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getForecast();
+
+        Log.d(TAG, "Main UI code is running, horray!");
+    }
+
+    private void getForecast() {
         final ActivityMainBinding binding = DataBindingUtil.setContentView(MainActivity.this,
                 R.layout.activity_main);
 
@@ -119,8 +125,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-
-        Log.d(TAG, "Main UI code is running, horray!");
     }
 
     private CurrentWeather getCurrentDetails(String jsonData) throws JSONException{
