@@ -1,5 +1,7 @@
 package com.example.yhussein.stormy;
 
+import java.text.SimpleDateFormat;
+
 public class CurrentWeather {
 
     private String locationLabel;
@@ -28,6 +30,10 @@ public class CurrentWeather {
 
     public long getTime() {
         return time;
+    }
+
+    public String getFormattedTime(){
+        SimpleDateFormat formatter = new SimpleDateFormat("h:mm:a");
     }
 
     public void setTime(long time) {
