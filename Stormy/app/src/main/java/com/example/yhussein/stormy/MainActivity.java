@@ -78,15 +78,17 @@ public class MainActivity extends AppCompatActivity {
                             currentWeather = getCurrentDetails(jsonData);
 
                             CurrentWeather displayWeather = new CurrentWeather(
-                                    currentWeather.getLocationLabel();
-                                    currentWeather.getIcon();
-                                    currentWeather.getTime();
-                                    currentWeather.getTemperature();
-                                    currentWeather.getHumidity();
-                                    currentWeather.getPercepChance();
-                                    currentWeather.getSummary();
-                                    currentWeather.getTimeZone();
+                                    currentWeather.getLocationLabel(),
+                                    currentWeather.getIcon(),
+                                    currentWeather.getTime(),
+                                    currentWeather.getTemperature(),
+                                    currentWeather.getHumidity(),
+                                    currentWeather.getPercepChance(),
+                                    currentWeather.getSummary(),
+                                    currentWeather.getTimeZone()
                             );
+
+
                         } else {
                             alertUserAboutError();
                         }
