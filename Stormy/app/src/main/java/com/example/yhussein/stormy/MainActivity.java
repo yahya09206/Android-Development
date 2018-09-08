@@ -82,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
 
     private CurrentWeather getCurrentDetails(String jsonData) throws JSONException{
         JSONObject forecast = new JSONObject(jsonData);
+        // Write timezone to log
+        String timezone = forecast.getString("timezone");
+        Log.i(TAG, "From JSON " + timezone);
+        return null;
     }
 
     private boolean isNetworkAvailable() {
