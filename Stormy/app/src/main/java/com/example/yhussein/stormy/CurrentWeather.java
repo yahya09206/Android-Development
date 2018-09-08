@@ -1,6 +1,7 @@
 package com.example.yhussein.stormy;
 
 import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
 public class CurrentWeather {
 
@@ -11,6 +12,15 @@ public class CurrentWeather {
     private double humidity;
     private double percepChance;
     private String summary;
+    private String timeZone;
+
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
 
     public String getLocationLabel() {
         return locationLabel;
@@ -34,6 +44,8 @@ public class CurrentWeather {
 
     public String getFormattedTime(){
         SimpleDateFormat formatter = new SimpleDateFormat("h:mm:a");
+        formatter.setTimeZone(TimeZone.getTimeZone(timeZone));
+        return formatter.format();
     }
 
     public void setTime(long time) {
