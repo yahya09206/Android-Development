@@ -87,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "From JSON " + timezone);
 
         JSONObject currently = forecast.getJSONObject("currently");
-
         //Current weather object
         CurrentWeather currentWeather = new CurrentWeather();
         currentWeather.setHumidity(currently.getDouble("humidity"));
+        currentWeather.setTime(currently.getLong("time"));
         currentWeather.setIcon(currently.getString("icon"));
         currentWeather.setLocationLabel("Alcatrez Island, CA");
         currentWeather.setPercepChance(currently.getDouble("precipProbability"));
