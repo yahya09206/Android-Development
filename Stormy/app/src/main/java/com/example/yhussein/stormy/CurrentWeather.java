@@ -1,6 +1,7 @@
 package com.example.yhussein.stormy;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.TimeZone;
 
 public class CurrentWeather {
@@ -45,6 +46,8 @@ public class CurrentWeather {
     public String getFormattedTime(){
         SimpleDateFormat formatter = new SimpleDateFormat("h:mm:a");
         formatter.setTimeZone(TimeZone.getTimeZone(timeZone));
+        // Convert into milliseconds
+        Date dateTime = new Date(time * 1000);
         return formatter.format();
     }
 
