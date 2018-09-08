@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(MainActivity.this,
+        final ActivityMainBinding binding = DataBindingUtil.setContentView(MainActivity.this,
                 R.layout.activity_main);
 
         TextView darkSky = findViewById(R.id.attribution);
@@ -88,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                                     currentWeather.getTimeZone()
                             );
 
+                            // Set weather to display with binding variable
+                            binding.setWeather(displayWeather);
 
                         } else {
                             alertUserAboutError();
