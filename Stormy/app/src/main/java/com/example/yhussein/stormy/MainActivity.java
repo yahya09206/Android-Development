@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                         if (response.isSuccessful()) {
                             currentWeather = getCurrentDetails(jsonData);
 
-                            CurrentWeather displayWeather = new CurrentWeather(
+                            final CurrentWeather displayWeather = new CurrentWeather(
                                     currentWeather.getLocationLabel(),
                                     currentWeather.getIcon(),
                                     currentWeather.getTime(),
@@ -97,9 +97,16 @@ public class MainActivity extends AppCompatActivity {
                             // Set weather to display with binding variable
                             binding.setWeather(displayWeather);
 
-                            // Set image icon to match the weather
-                            Drawable drawable = getResources().getDrawable(displayWeather.getIconId());
-                            iconImageView.setImageDrawable(drawable);
+
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    // Set image icon to match the weather
+                                    Drawable drawable = getResources().getDrawable(displayWeather.getIconId());
+                                    iconImageView.setImageDrawable(drawable);
+                                }
+                            });
+
 
                         } else {
                             alertUserAboutError();
