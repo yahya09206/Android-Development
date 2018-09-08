@@ -87,7 +87,17 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "From JSON " + timezone);
 
         JSONObject currently = forecast.getJSONObject("currently");
-        return null;
+
+        //Current weather object
+        CurrentWeather currentWeather = new CurrentWeather();
+        currentWeather.setHumidity(currently.getDouble("humidity"));
+        currentWeather.setIcon(currently.getString("icon"));
+        currentWeather.setLocationLabel("Alcatrez Island, CA");
+        currentWeather.setPercepChance(currently.getDouble("precipProbability"));
+        currentWeather.setSummary(currently.getString("summary"));
+        currentWeather.setTemperature(currently.getDouble("temperature"));
+
+        return currentWeather;
     }
 
     private boolean isNetworkAvailable() {
