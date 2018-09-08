@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,18 +34,20 @@ public class MainActivity extends AppCompatActivity {
 
     // Current Weather object
     private CurrentWeather currentWeather;
-
     private ImageView iconImageView;
+
+    final double latitude = 37.8267;
+    final double longitude = -122.4233;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getForecast();
+        getForecast(latitude, longitude);
 
         Log.d(TAG, "Main UI code is running, horray!");
     }
 
-    private void getForecast() {
+    private void getForecast(double latitude, double longitude) {
         final ActivityMainBinding binding = DataBindingUtil.setContentView(MainActivity.this,
                 R.layout.activity_main);
 
@@ -55,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
         iconImageView = findViewById(R.id.iconImageView);
 
         String apiKey = "e59741b20df0b6a1feb5d659d327094b";
-
-        double latitude = 37.8267;
-        double longitude = -122.4233;
 
         // Fake api call
         String forecastURL = "https://api.darksky.net/forecast/"
@@ -168,6 +168,11 @@ public class MainActivity extends AppCompatActivity {
         // Create new alert dialog fragment
         AlertDialogFragment dialog = new AlertDialogFragment();
         dialog.show(getFragmentManager(), "error dialog");
+
+    }
+
+    public void refreshOnClick(View view){
+        getForecast(latitude, longitude);
 
     }
 }
