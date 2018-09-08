@@ -23,7 +23,7 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
 
-    //Current Weather object
+    // Current Weather object
     private CurrentWeather currentWeather;
 
     @Override
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             // Put request inside of call object to get response
             Call call = client.newCall(request);
 
-            //Async method
+            // Async method
             call.enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "From JSON " + timezone);
 
         JSONObject currently = forecast.getJSONObject("currently");
-        //Current weather object
+        // Current weather object
         CurrentWeather currentWeather = new CurrentWeather();
         currentWeather.setHumidity(currently.getDouble("humidity"));
         currentWeather.setTime(currently.getLong("time"));
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         currentWeather.setSummary(currently.getString("summary"));
         currentWeather.setTemperature(currently.getDouble("temperature"));
 
+        // Return current weather object
         return currentWeather;
     }
 
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void alertUserAboutError() {
-        //Create new alert dialog fragment
+        // Create new alert dialog fragment
         AlertDialogFragment dialog = new AlertDialogFragment();
         dialog.show(getFragmentManager(), "error dialog");
 
