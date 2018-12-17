@@ -17,6 +17,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     // Common practice
     public static final String TAG = MainActivity.class.getSimpleName();
+    private static final String KEY_FACT = "KEY_FACT";
     // Make variable only available inside this class
     private FactBook factBook = new FactBook();
     private ColorWheel colorWheel = new ColorWheel();
@@ -24,10 +25,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView factTextView;
     private Button showFactButton;
     private RelativeLayout relativeLayout;
+    private String fact;
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        //put string method to type our fact
+        outState.putString(KEY_FACT, fact);
     }
 
     @Override
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             // Code to run when button is clicked
             public void onClick(View v) {
-                String fact = factBook.getFact();
+                fact = factBook.getFact();
 
                 // Update screen with new fact - Change layout
                 factTextView.setText(fact);
