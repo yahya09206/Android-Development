@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView factTextView;
     private Button showFactButton;
     private RelativeLayout relativeLayout;
-    private String Fact;
-    private int Color;
+    private String Fact = factBook.facts[0];
+    private int Color = colorWheel.colors[8];
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
