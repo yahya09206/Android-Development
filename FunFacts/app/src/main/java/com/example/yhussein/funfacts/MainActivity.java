@@ -40,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
+
+        Fact = savedInstanceState.getString(KEY_FACT);
+        factTextView.setText(Fact);
+        Color = savedInstanceState.getInt(KEY_COLOR);
+        relativeLayout.setBackgroundColor(Color);
+        showFactButton.setTextColor(Color);
+
+
     }
 
     @Override
