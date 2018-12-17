@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     // Common practice
     public static final String TAG = MainActivity.class.getSimpleName();
     private static final String KEY_FACT = "KEY_FACT";
+    private static final String KEY_COLOR = "KEY_COLOR";
     // Make variable only available inside this class
     private FactBook factBook = new FactBook();
     private ColorWheel colorWheel = new ColorWheel();
@@ -25,13 +26,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView factTextView;
     private Button showFactButton;
     private RelativeLayout relativeLayout;
-    private String fact;
+    private String Fact;
+    private int Color;
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         //put string method to type our fact
-        outState.putString(KEY_FACT, fact);
+        outState.putString(KEY_FACT, Fact);
+        outState.putInt(KEY_COLOR, Color);
     }
 
     @Override
@@ -49,16 +52,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             // Code to run when button is clicked
             public void onClick(View v) {
-                fact = factBook.getFact();
+                Fact = factBook.getFact();
 
                 // Update screen with new fact - Change layout
-                factTextView.setText(fact);
+                factTextView.setText(Fact);
 
-                int color = colorWheel.getColor();
-                relativeLayout.setBackgroundColor(color);
+                Color = colorWheel.getColor();
+                relativeLayout.setBackgroundColor(Color);
 
                 // Match button with BG color
-                showFactButton.setTextColor(color);
+                showFactButton.setTextColor(Color);
             }
         };
         showFactButton.setOnClickListener(listener);
