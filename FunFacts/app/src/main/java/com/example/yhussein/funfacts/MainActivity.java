@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
     private Button showFactButton;
     private RelativeLayout relativeLayout;
     private String Fact = factBook.facts[0];
-    private int Color = colorWheel.colors[8];
+    private int Colors = Color.parseColor(colorWheel.colors[8]);
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         //put string method to type our fact
         outState.putString(KEY_FACT, Fact);
-        outState.putInt(KEY_COLOR, Color);
+        outState.putInt(KEY_COLOR, Colors);
     }
 
     @Override
@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
         Fact = savedInstanceState.getString(KEY_FACT);
         factTextView.setText(Fact);
-        Color = savedInstanceState.getInt(KEY_COLOR);
-        relativeLayout.setBackgroundColor(Color);
-        showFactButton.setTextColor(Color);
+        Colors = savedInstanceState.getInt(KEY_COLOR);
+        relativeLayout.setBackgroundColor(Colors);
+        showFactButton.setTextColor(Colors);
 
 
     }
@@ -70,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
                 // Update screen with new fact - Change layout
                 factTextView.setText(Fact);
 
-                Color = colorWheel.getColor();
-                relativeLayout.setBackgroundColor(Color);
+                Colors = colorWheel.getColor();
+                relativeLayout.setBackgroundColor(Colors);
 
                 // Match button with BG color
-                showFactButton.setTextColor(Color);
+                showFactButton.setTextColor(Colors);
             }
         };
         showFactButton.setOnClickListener(listener);
