@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     private static final String PREFS_FILE = "com.example.yhussein.sharedpreferences.preferences";
+    private static final String KEY_EDITTEXT = "key_edittext";
     private SharedPreferences.Editor Editor;
     private SharedPreferences SharedPreferences;
     private EditText EditText;
@@ -29,5 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
 
         Editor.putString(KEY_EDITTEXT, EditText.getText().toString());
+        Editor.apply();
     }
 }
