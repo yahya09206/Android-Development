@@ -20,6 +20,14 @@ public class MainActivity extends AppCompatActivity {
         EditText = findViewById(R.id.editText3);
         SharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
         Editor = SharedPreferences.edit();
-;
+
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Editor.putString(KEY_EDITTEXT, EditText.getText().toString());
     }
 }
