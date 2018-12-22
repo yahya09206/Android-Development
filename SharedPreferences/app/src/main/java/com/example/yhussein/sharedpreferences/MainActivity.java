@@ -22,11 +22,14 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
         Editor = SharedPreferences.edit();
 
+        String editTextString = SharedPreferences.getString(KEY_EDITTEXT, "");
+        EditText.setText(editTextString);
+
 
     }
 
     @Override
-    protected void onPause() {
+    protected void onPause()This {
         super.onPause();
 
         Editor.putString(KEY_EDITTEXT, EditText.getText().toString());
