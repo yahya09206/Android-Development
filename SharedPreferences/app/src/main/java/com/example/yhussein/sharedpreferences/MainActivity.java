@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause()This {
+    protected void onPause() {
         super.onPause();
 
         Editor.putString(KEY_EDITTEXT, EditText.getText().toString());
